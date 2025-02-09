@@ -1,38 +1,10 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import { ProgressIndicator, ProgressRoot } from "radix-vue";
+import TweenedNumber from "~/components/TweenedNumber.vue";
 
 const progressValue = ref(10);
-const tweened = reactive({
-    number: 0,
-});
-function tweenToFinalValue(finalValue: number, duration: number) {
-    const startValue = tweened.number;
-    let startTime: number;
-    function update() {
-        const elapsedTime = Date.now() - startTime;
-        if (elapsedTime >= duration * 1000) {
-            tweened.number = finalValue;
-            return;
-        }
-        const progress = elapsedTime / (duration * 1000);
-        tweened.number = startValue + (finalValue - startValue) * progress;
-        requestAnimationFrame(update);
-    }
-    startTime = Date.now();
-    update();
-}
-function getColourBasedOnProgress(progress: number) {
-    //Red (0 to 50): Transition from Red (255, 0, 0) to Yellow (255, 255, 0).
-    //Yellow (50 to 100): Transition from Yellow (255, 255, 0) to Green (0, 255, 0).
-}
 
-watch(
-    () => progressValue.value,
-    (newValue) => {
-        tweenToFinalValue(newValue, 0.65);
-    }
-);
 onMounted(() => {
     // Every 1 second, randomise the progress value
     setInterval(() => {
@@ -60,7 +32,7 @@ onMounted(() => {
             />
         </ProgressRoot>
         <h1 class="text-3xl text-center mt-5 -translate-x-6">
-            {{ Math.floor(tweened.number) }}% complete
+            <TweenedNumber :progress-value="progressValue" :animation-duration="0.65"/>% complete
         </h1>
     </body>
 </template>
