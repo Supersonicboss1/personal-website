@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+.background-crosses {
+    background-color: #1a1a1a;
+    background-image: 
+      /* Horizontal lines */
+      linear-gradient(0deg, rgb(73, 66, 66) 1px, transparent 1px),
+      /* Vertical lines */
+      linear-gradient(90deg, rgb(73, 66, 66) 1px, transparent 1px);
+      background-size: 40px 40px;
+    /* animate background position */
+    animation: animateBackgroundCrosses 1s linear infinite;
+}
+.background-dots {
+    background-image: radial-gradient(rgb(73, 66, 66) 1px, transparent 0);
+    background-size: 40px 40px;
+    background-position: -19px -19px;
+    /* animate background position */
+    animation: animateBackgroundDots 1s linear infinite;
+}
+@keyframes animateBackgroundCrosses {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 40px 40px; /* Same as your background-size */
+    }
+}
+
+@keyframes animateBackgroundDots {
+    0% {
+        background-position: -19px -19px;
+    }
+    100% {
+        background-position: 21px 21px; /* Offset by your background-size */
+    }
+}

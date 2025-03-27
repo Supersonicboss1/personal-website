@@ -4,11 +4,11 @@
 
 <script lang="ts" setup>
 const props = defineProps<{
-    progressValue: number;
+    value: number;
     animationDuration: number;
 }>();
 const displayValue = ref(0);
-function tweenToFinalValue(finalValue: number, duration: number) { //TODO: Allow different easing functions (who tf knows how to do that)
+function tweenToFinalValue(finalValue: number, duration: number) {
     const startValue = displayValue.value;
     let startTime: number;
     function update() {
@@ -25,7 +25,7 @@ function tweenToFinalValue(finalValue: number, duration: number) { //TODO: Allow
     update();
 }
 watch(
-    () => props.progressValue,
+    () => props.value,
     (newValue) => {
         tweenToFinalValue(newValue, props.animationDuration);
     }
