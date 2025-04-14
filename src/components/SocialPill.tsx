@@ -1,18 +1,30 @@
 "use client";
-import { IconType } from "@icons-pack/react-simple-icons";
+import { SiBluesky, SiDiscord, SiGithub } from "@icons-pack/react-simple-icons";
 import { useState } from "react";
 
 export default function SocialPill({
     name,
-    Icon,
+    icon,
     link,
     color = "#ffffff"
 }: {
     name: string;
-    Icon: IconType; // string should not be used in most cases
+    icon: "github" | "bluesky" | "discord";
     link: string;
     color?: string;
 }) {
+  const renderIcon = () => {
+    switch (icon) {
+      case "github":
+        return <SiGithub color={color} className="flex w-4 translate-y-[2px]" />;
+      case "bluesky":
+        return <SiBluesky color={color} className="flex w-4 translate-y-[2px]" />;
+      case "discord":
+        return <SiDiscord color={color} className="flex w-4 translate-y-[2px]" />;
+      default:
+        return null; // Should not happen since type is restricted
+    }
+  };
     function setShowUsernameAfterDelay() {
         setShowUsername(false)
         setTimeout(() => {
@@ -39,11 +51,7 @@ export default function SocialPill({
             `}
       >
         <div className="flex items-center">
-<Icon
-            color={color}
-            className="flex w-4 translate-y-[2px]"
-          />
-          
+          {renderIcon()}
           
           <span 
             className={`text-gray-300 font-semibold overflow-hidden transition-all duration-300 whitespace-nowrap
