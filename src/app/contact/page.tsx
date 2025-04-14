@@ -1,4 +1,6 @@
+"use client";
 import SocialPill from "@/components/SocialPill";
+import { SiBluesky, SiDiscord, SiGithub } from "@icons-pack/react-simple-icons";
 export default function Contact() {
     return (
 <div>
@@ -18,21 +20,21 @@ export default function Contact() {
             <div className="flex grid-cols-10 gap-4 mt-5">
                 <SocialPill
                     name="GitHub"
-                    icon="github.svg"
+                    Icon={SiGithub}
                     link="https://github.com/Supersonicboss1"
                     color="#ffffff"
                 />
                 <SocialPill
                     name="Bluesky"
-                    icon="bluesky.svg"
+                    Icon={SiBluesky}
                     link="https://bsky.app/profile/supersonicboss1.co.uk"
-                    invert-color
+                    color="#0285FF"
                 />
                 <SocialPill
                     name="Supersonicboss1"
-                    icon="discord.svg"
+                    Icon={SiDiscord}
                     link=""
-                    invert-color
+                    color="#5865F2"
                 />
             </div>
         </div>

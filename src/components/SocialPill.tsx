@@ -1,15 +1,15 @@
 "use client";
-import Image from "next/image";
-import { JSX, useState } from "react";
+import { IconType } from "@icons-pack/react-simple-icons";
+import { useState } from "react";
 
 export default function SocialPill({
     name,
-    icon,
+    Icon,
     link,
     color = "#ffffff"
 }: {
     name: string;
-    icon: string | JSX.Element;
+    Icon: IconType; // string should not be used in most cases
     link: string;
     color?: string;
 }) {
@@ -39,18 +39,11 @@ export default function SocialPill({
             `}
       >
         <div className="flex items-center">
-         {(typeof icon === 'string') ? <Image
-            src={icon}
-            alt="Icon"
-            width={16}
-            height={16}
+<Icon
+            color={color}
             className="flex w-4 translate-y-[2px]"
-            style={
-                {
-                    color: color,
-                }
-            }
-          /> : <span v-else>{ icon }</span>}
+          />
+          
           
           <span 
             className={`text-gray-300 font-semibold overflow-hidden transition-all duration-300 whitespace-nowrap
