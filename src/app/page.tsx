@@ -1,4 +1,5 @@
 import Contact from "./homepage/contact";
+import Projects from "./homepage/projects";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         </p>
     </div>
     <Contact />
+    <Projects />
     </>
   );
 }
