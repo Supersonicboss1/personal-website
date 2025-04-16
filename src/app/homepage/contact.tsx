@@ -1,4 +1,5 @@
 import SocialPill from "@/components/SocialPill";
+import Typewriter from "@/components/typewriter";
 export default function Contact() {
     return (
 <div>
@@ -12,8 +13,7 @@ export default function Contact() {
                 href="mailto:leodalgado@gmail.com"
                 className="font-mono px-2 p-1 m-1 hover:bg-[#232323] rounded-md transition-all duration-300"
             >
-                leodalgado@gmail.com
-                <span className="animate-blink -translate-x-[2px] absolute">|</span>
+                <Typewriter text="leodalgado@gmail.com"/>
             </a>
             <div className="flex grid-cols-10 gap-4 mt-5">
                 <SocialPill

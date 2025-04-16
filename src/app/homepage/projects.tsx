@@ -12,7 +12,10 @@ export default function Projects() {
                 date={new Date("2020-09-03")}
                 image="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/1229490/header.jpg?t=1740623813"
                 description="ULTRAKILL is a fast-paced ultraviolent retro FPS combining the skill-based style scoring from character action games with unadulterated carnage inspired by the best shooters of the '90s. Rip apart your foes with varied destructive weapons and shower in their blood to regain your health."
-                tags={["Unity", "C#"]}
+                tags={[
+                    { name: "Unity", url: "https://unity.com/" },
+                    { name: "C#", url: "https://learn.microsoft.com/en-us/dotnet/csharp/" },
+                ]}
                 websiteLink="https://store.steampowered.com/app/1229490/ULTRAKILL/"
                 githubLink="https://preview.redd.it/who-is-this-wrong-answers-only-v0-pxdml65fi1ve1.jpeg?width=640&crop=smart&auto=webp&s=7aa7c09db4c77a9e2cf572946e8e4df992410413"
             />

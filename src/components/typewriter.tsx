@@ -10,7 +10,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export default function Typewriter({
     text,
-    speed = 20,
+    speed = 10,
 }: {
     text: string;
     speed?: number;
