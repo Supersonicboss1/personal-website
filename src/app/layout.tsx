@@ -17,9 +17,9 @@ export default function RootLayout({
                     <UnderlinedNextLink href="/" className="text-xl font-bold">Leo&apos;s Portfolio</UnderlinedNextLink>
                 </div>
                 <div className="flex items-center">
-                    <UnderlinedNextLink href="/about">About</UnderlinedNextLink>
-                    <UnderlinedNextLink href="/projects" className="ml-4">Projects</UnderlinedNextLink>
-                    <UnderlinedNextLink href="/contact" className="ml-4">Contact</UnderlinedNextLink>
+                    <UnderlinedNextLink href="/#about">About</UnderlinedNextLink>
+                    <UnderlinedNextLink href="/#projects" className="ml-4">Projects</UnderlinedNextLink>
+                    <UnderlinedNextLink href="/#contact" className="ml-4">Contact</UnderlinedNextLink>
                 </div>
             </div>
         </nav>

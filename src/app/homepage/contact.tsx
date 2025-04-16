@@ -2,7 +2,7 @@ import SocialPill from "@/components/SocialPill";
 export default function Contact() {
     return (
 <div>
-    <h1 className="text-5xl text-center font-bold mt-3">Contact me!</h1>
+    <h1 className="text-5xl text-center font-bold mt-3" id="contact">Contact me!</h1>
     <div className="mt-5 p-1 w-full flex justify-center">
         <div className="outline outline-[#464646] rounded-md w-[40%] bg-[#1c1c1c43] p-4">
             <label htmlFor="email" className="block text-gray-500 font-bold pl-3">
@@ -27,12 +27,6 @@ export default function Contact() {
                     icon="bluesky"
                     link="https://bsky.app/profile/supersonicboss1.co.uk"
                     color="#0285FF"
-                />
-                <SocialPill
-                    name="Supersonicboss1"
-                    icon="discord"
-                    link=""
-                    color="#5865F2"
                 />
             </div>
         </div>
